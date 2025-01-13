@@ -18,7 +18,7 @@ fi
 # Extract ELF header information using readelf
 magic_number=$(readelf -h "$file_name" | grep "Magic:" | awk '{$1=""; print $0}')
 class_format=$(readelf -h "$file_name" | grep "Class:" | awk '{print $2}')
-byte_order=$(readelf -h "$file_name" | grep "Data:" | awk '{print $2}')
+
 entry_point_address=$(readelf -h "$file_name" | grep "Entry point address:" | awk '{print $NF}')
 
 # Display the information
