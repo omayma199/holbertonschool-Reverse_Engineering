@@ -1,5 +1,8 @@
 #!/bin/bash
 
+source ./messages.sh
+
+
 # Fixed file name
 file_name="task1"
 
@@ -21,10 +24,4 @@ class=$(readelf -h "$file_name" | grep "Class:" | awk '{print $2}')
 byte_order=$(readelf -h "$file_name" | grep "Data:" | awk -F, '{print $2}' | xargs)
 entry_point_address=$(readelf -h "$file_name" | grep "Entry point address:" | awk '{print $NF}')
 
-# Display the information
-echo "ELF Header Information for '$file_name':"
-echo "----------------------------------------"
-echo "Magic Number: $magic_number"
-echo "Class: $class"
-echo "Byte Order: $byte_order"
-echo "Entry Point Address: $entry_point_address"
+display_elf_header_info
