@@ -1,8 +1,5 @@
 #!/bin/bash
-
 source ./messages.sh
-
-
 # Fixed file name
 file_name="task1"
 

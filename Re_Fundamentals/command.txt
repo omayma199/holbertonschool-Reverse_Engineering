@@ -1,1 +1,1 @@
-readelf -S task2
+readelf -S task1
